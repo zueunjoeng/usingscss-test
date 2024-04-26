@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'KCC-Hanbit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'KCC-Hanbit';
+    // font size는 넣으면 안됨. 컬러만 괜춘
+    color: #1f1f1f;
+    line-height: 2;
+    letter-spacing: -0.085em;
+    margin:0; padding: 0;
+
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+// 이 슬러쉬 두개는 자바스크립트 주석이다
+//공통변수
+
+
+
+
+//공통클래스 심플하게 세부적으로 조작할 수 있도록 조작(관리)는 html에서
+.container{
+    max-width:1280px;
+} 
+.mx-auto{
+    margin: 0 auto;
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between
+}
+.bg-white{
+    background-color:white;
+}
+.border-bottom{
+    border-bottom: 1px solid #ccc;
+}
+
+//커스터마이징-이제부터 개별 커스텀한다는 뜻
+
+#hd{
+    .hd_container{
+        h1{
+            a{
+                color: black;
+            }
+        }
+        .util{
+           
+        }
+    }
+}
+
+#gnb{
+    li{
+        a{
+            color:red;
+        }
+    }
+}    
+//아이디는 부모가 있어도 밖으로 빼도 된다. 그래서 id가 있는거양-이정표역할
+
+#noticeSwiper{
+    .notice{
+        li{
+            background-color: red;
+            &:nth-child(2){ //&=나 자신이라서 li 두번째가 되는ㄱ럿
+                background-color:yellow;
+            }
+        }
+    }
+    >div{ //>자손선택자
+        width: 50%;
+    }
+}
+//#noticeSwiper.container --- .container#noticeSwiper -- seciton#noticeSwiper.container
+// 또 section{&#noticeSwiper.container{}}가능, section{&#notcieSwiper{&.container{}}}도 가능 띄어쓰기는 안돼!
+
